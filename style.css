@@ -1,0 +1,169 @@
+/* Created by XiaoLiu */
+
+body {
+    margin:0;
+    padding:0;
+    background: #f8956f;
+}
+
+p{
+    color:#2f3640;
+    text-align:center ;
+    text-transform:uppercase ;
+    font-size:20px;
+    position:fixed  ;
+    top:15%;
+    left:40%;
+}
+
+.search-box{
+    position:absolute ;
+    top:30%;
+    left:37%;
+    transform:translate (-50%,-50%);
+    background: #2f3640;
+    height:40px;
+    border-radius:40px;
+    padding:10px;
+
+}
+
+.search-box:hover > .search-txt{
+    width:240px;
+    padding:0 6px;
+    color: white;
+
+}
+
+.search-box:hover > .add{
+    background:white;
+}
+
+.add{
+    color:#f8956f;
+    float:right ;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#2f3640;
+    display:flex;
+    justify-content:center ;
+    align-items:center ;
+    text-decoration:none;
+}
+
+.search-txt{
+    border:none ;
+    background:none;
+    outline:none;
+    float:left ;
+    padding:0;
+    font-size:16px;
+    transition:0.4s;
+    line-height:40px;
+    width:0px;
+}
+
+
+#con{
+    list-style-type:none;
+}
+.box{
+    height:90px;
+    width:300px;
+    border-radius:5px;
+    position:relative ;
+    top:80px;
+    background-color:white;
+    display:flex;
+    left:35%;   
+    margin-bottom:10%;  
+    overflow:hidden ;
+    transition:0.5s;
+}
+
+@media only screen and (max-width: 600px) {
+  .box {
+    height:90px;
+    width:300px;
+    border-radius:5px;
+    position:relative ;
+    top:80px;
+    background-color:white;
+    display:flex;
+    left:1%;   
+    margin-bottom:10%;  
+    overflow:hidden ;
+    transition:0.5s;
+    
+  }
+
+  p{
+    color:#2f3640;
+    position:fixed;
+    top:20%;
+    left:20%;
+  }
+
+  .search-box{
+    position:absolute ;
+    top:30%;
+    left:9%;
+    transform:translate (-50%,-50%);
+    background: #2f3640;
+    height:40px;
+    border-radius:40px;
+    padding:10px;
+
+}
+
+}
+
+
+.bo::before{
+    content:'';
+    height:20px;
+    z-index:1;
+    width:50px;
+    background-color:#8bc34a;
+    transform:rotate(-45deg);
+    position:absolute ;
+    right:-20px;
+    top:70px;
+    transition:0.5s;
+}
+.text{
+    font-size:20px;
+    margin:13px 0 0 14px;
+    position:absolute ;
+}
+.remove{
+    color:#ed5650;
+    position:absolute ;
+    top:5px;
+    right:18%;
+    font-size:25px;
+}
+.done{
+    color:#8BC34A;
+    position:absolute ;
+    font-size:25px;
+    top:5px;
+     right:5%;
+}
+.read{
+    width:90%;
+    background-color:#ed5650;
+    height:30px;
+    margin-left:15px;
+    margin-top:50px;
+    color:#fff;
+    text-align:center;
+    line-height:30px;
+    font-size:18px;
+    z-index:99;
+}
+
+
+
+

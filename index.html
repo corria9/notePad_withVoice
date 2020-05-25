@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Note Pad With Voice</title>
+
+    <script>
+
+
+      console.log = function(){}
+      console.error = function(){}
+    
+
+    </script>
+
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+
+  </head>
+
+
+
+  <body>
+
+
+
+
+    <p>Note Pad | With Voice</p>
+       <div class="search-box">
+           <input type="text" id="input" class="search-txt" placeholder="Que quieres agregar?">
+           <span class="add" id="add">☆</span>
+       </div> 
+
+    
+
+       <ul id="con">
+
+       </ul>
+
+
+
+
+
+    <script>
+
+
+
+var ul = document.getElementById("con");
+var add = document.getElementById("add");
+add.addEventListener('click',function(){
+var value = document.getElementById("input").value
+if(value){
+additem(value)
+}
+})
+function additem(val){
+var item = document.createElement('li');
+//ul.insertBefore(item,ul.childNodes[0])
+item.classList.add("text")
+item.innerHTML = val;
+var read = document.createElement('div');
+read.classList.add("read");
+read.innerHTML = "Read";
+var remove = document.createElement('div');
+remove.classList.add("remove");
+remove.innerHTML = "✖";
+
+var done = document.createElement('div');
+done.classList.add("done");
+done.innerHTML = "✔";
+
+var box = document.createElement('div');
+box.classList.add("box")
+box.appendChild(item);
+box.appendChild(remove);
+box.appendChild(read);
+box.appendChild(done);
+ul.appendChild(box);
+var input = document.getElementById("input")
+input.value ="";
+
+done.addEventListener('click',function(){
+if(box.className == "box bo"){
+box.classList.remove("bo")
+}
+else{
+box.classList.add("bo");
+}
+});
+remove.addEventListener("click",function(){
+this.parentNode.style.display = 'none';
+});
+
+read.addEventListener('click',function(){
+let x = this.parentNode.firstChild.innerHTML;
+responsiveVoice.speak(x,"UK English Female",{volume:1,pitch:1.2,rate:1})
+})
+
+
+}
+
+  
+
+    </script>
+
+
+<!-- 
+    A     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+          Include all compiled plugins (below), or include individual files as needed -->
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+          <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+  </body>
+</html>
